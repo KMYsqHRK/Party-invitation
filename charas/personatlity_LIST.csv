@@ -1,14 +1,14 @@
-Trait,Category,Description,Synonym
-Kind-hearted,Positive,Showing compassion and care for others,Compassionate
-Brave,Positive,Willing to face danger or difficulty,Courageous
-Modest,Positive,Humble and unassuming,Humble
-Cheerful,Positive,Full of optimism and good spirits,Upbeat
-Patient,Positive,Able to wait calmly without complaint,Tolerant
-Confident,Positive,Self-assured and certain,Self-assured
-Timid,Neutral,Shy and lacking confidence,Shy
-Cautious,Neutral,Careful and avoiding risks,Careful
-Ambitious,Neutral,Strongly desiring success,Driven
-Stubborn,Negative,Unwilling to change opinion,Obstinate
-Arrogant,Negative,Having excessive pride,Conceited
-Lazy,Negative,Unwilling to work or use energy,Idle
-Pessimistic,Negative,Tending to see the worst,Negative
+Trait,Description,HP,ATK,DEF,WIS,LUC,AGI
+Kind-hearted,Showing compassion and care for others,0,0,1,1,2,0
+Brave,Willing to face danger or difficulty,0,2,0,0,0,2
+Modest,Humble and unassuming,0,0,0,2,2,0
+Cheerful,Full of optimism and good spirits,0,1,0,0,2,2
+Patient,Able to wait calmly without complaint,0,0,2,0,2,0
+Confident,Self-assured and certain,0,1,0,1,2,0
+Timid,Shy and lacking confidence,0,0,-2,2,1,3
+Cautious,Careful and avoiding risks,0,0,2,1,0,-3
+Ambitious,Strongly desiring success,0,2,-1,-1,2,2
+Stubborn,Unwilling to change opinion,0,2,2,-2,0,-2
+Arrogant,Having excessive pride,0,3,-1,0,-2,0
+Lazy,Unwilling to work or use energy,0,0,2,-1,3,-2
+Pessimistic,Tending to see the worst,0,0,-1,3,-3,1
