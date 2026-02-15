@@ -273,10 +273,10 @@ Output:"""
             # 90%以上なら確定でYES
             becomes_companion = True
             decision_type = "確定YES (≥90%)"
-        elif yes_prob <= 0.1:
+        elif yes_prob <= 0.20:
             # 10%以下なら確定でNO
             becomes_companion = False
-            decision_type = "確定NO (≤10%)"
+            decision_type = "確定NO (≤20%)"
         else:
             # 10%～90%の間は確率的判定
             becomes_companion = random_value < yes_prob
