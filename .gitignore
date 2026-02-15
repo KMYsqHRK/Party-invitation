@@ -1,0 +1,17 @@
+# Ignore everything by default
+*
+
+# Allow directories (needed for recursive tracking)
+!*/
+
+# Allow specific file types
+!*.py
+!*.md
+!*.png
+!*.jpeg
+!*.json
+!*.txt
+!*.svg
+
+# Also allow .gitignore itself
+!.gitignore
