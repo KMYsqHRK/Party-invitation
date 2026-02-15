@@ -1,0 +1,11 @@
+Class,Role,Primary_Weapon,Primary_Stat,Description,Typical_Abilities
+Warrior,Tank,Sword and Shield,Strength,Heavy armor melee fighter with high defense,Shield Bash, Taunt, Power Strike
+Rogue,DPS,Dagger,Dexterity,Stealthy assassin with high critical hit rate,Backstab, Stealth, Poison
+Archer,DPS,Bow,Dexterity,Ranged attacker with precision strikes,Multishot, Aimed Shot, Arrow Rain
+Monk,DPS,Bare Hands,Dexterity,Martial artist who fights with fists and agility,Chi Strike, Meditation, Counter
+Mage,DPS,Staff,Intelligence,Spellcaster wielding elemental and arcane magic,Fireball, Ice Storm, Teleport
+Priest,Healer,Mace,Wisdom,Holy healer who supports and protects allies,Heal, Resurrection, Barrier
+Paladin,Tank,Sword and Shield,Strength/Wisdom,Holy warrior combining combat and healing,Lay on Hands, Divine Shield, Smite
+Druid,Support,Staff,Wisdom,Nature magic user who can shapeshift,Transform, Nature's Wrath, Entangle
+Necromancer,DPS,Scythe,Intelligence,Dark magic user who controls the undead,Summon Undead, Life Drain, Curse
+Bard,Support,Lute,Charisma,Musical performer who buffs allies and debuffs enemies,Inspire, Sleep Song, Charm
