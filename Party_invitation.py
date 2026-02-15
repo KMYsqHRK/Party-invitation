@@ -129,7 +129,7 @@ Output: {character_name}:"""
             outputs = self.model.generate(
                 **inputs,
                 max_new_tokens=50,      # 短く
-                temperature=0.8,        # 決定的に
+            temperature=0.7,        # 決定的に
                 top_p=0.9,
                 top_k=40,               # 語彙制限
                 repetition_penalty=1.5, # 繰り返し防止
@@ -250,6 +250,8 @@ Output:"""
             outputs = self.model(**inputs)
             next_token_logits = outputs.logits[:, -1, :]
 
+        import random
+
         # YES / NO それぞれのトークンIDを取得
         yes_tokens = self.tokenizer.encode(" YES", add_special_tokens=False)
         no_tokens = self.tokenizer.encode(" NO", add_special_tokens=False)
@@ -264,7 +266,22 @@ Output:"""
         yes_prob = probs[0].item()
         no_prob = probs[1].item()
 
-        becomes_companion = yes_prob > no_prob
+        # 確率的判定
+        random_value = random.random()  # 0.0～1.0の乱数生成
+
+        if yes_prob >= 0.9:
+            # 90%以上なら確定でYES
+            becomes_companion = True
+            decision_type = "確定YES (≥90%)"
+        elif yes_prob <= 0.1:
+            # 10%以下なら確定でNO
+            becomes_companion = False
+            decision_type = "確定NO (≤10%)"
+        else:
+            # 10%～90%の間は確率的判定
+            becomes_companion = random_value < yes_prob
+            decision_type = f"確率的判定 (乱数={random_value:.3f})"
+
         confidence = max(yes_prob, no_prob)
 
         details = {
@@ -272,16 +289,20 @@ Output:"""
             'no_prob': no_prob,
             'confidence': confidence,
             'yes_logit': yes_logit,
-            'no_logit': no_logit
+            'no_logit': no_logit,
+            'random_value': random_value,
+            'decision_type': decision_type
         }
 
         # 結果表示
         print("\n" + "="*60)
-        print("最終判定（transformer二値分類）")
+        print("最終判定（確率的二値分類）")
         print("="*60)
         print(f"仲間になる: {'✓ YES' if becomes_companion else '✗ NO'}")
         print(f"YES確率: {yes_prob:.3f}")
         print(f"NO確率:  {no_prob:.3f}")
+        print(f"乱数値:  {random_value:.3f}")
+        print(f"判定方式: {decision_type}")
         print(f"確信度:  {confidence:.3f}")
         print("="*60)
 
@@ -302,7 +323,7 @@ WARRIOR_NAME = "Ragnar"
 # シナリオ1: 戦闘（戦士に適合 → 受け入れを期待）
 SCENARIO_COMBAT = [
     "I need a strong fighter.",
-    "Can you protect us in battle?",
+    "Can you attack enemies in battle with us?",
     "Will you fight for our party?"
 ]
 
