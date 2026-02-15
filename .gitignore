@@ -12,6 +12,9 @@
 !*.json
 !*.txt
 !*.svg
+!*.csv
+!*.yml
+!*.yaml
 
 # Also allow .gitignore itself
 !.gitignore
